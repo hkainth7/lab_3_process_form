@@ -3,9 +3,11 @@
     session_start();
 
     function iterateProgrammingArray($arr) {
+        echo "<ul>";
         foreach ($arr as $item){
             echo "<li>$item</li>";
         };
+        echo "</ul>";
     };
 
     // create constants
@@ -90,5 +92,4 @@
         $length = count($programming_lang_array);
         echo "<p>You are studying $length computer languages! You are multilingual";
         iterateProgrammingArray($programming_lang_array);
-    
     }
