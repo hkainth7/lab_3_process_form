@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 *, *::before, *::after {
@@ -54,3 +55,15 @@ input[type="submit"] {
     color: white;
 }
 
+p {
+    margin: 0;
+}
+
+.error-message {
+    background-color: red;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}

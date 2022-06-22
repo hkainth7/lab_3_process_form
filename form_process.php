@@ -71,7 +71,6 @@
         global $prefix;
         $prefix = "Mr.";
     } else {
-        
         $prefix = "Ms.";
     };
 
