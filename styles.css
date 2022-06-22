@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#wrapper {
+    display: grid;
+    place-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+fieldset {
+    padding: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender-info {
+    margin-top: 10px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+input[type="submit"] {
+    width: 50%;
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #06283D;
+    color: white;
+}
+
