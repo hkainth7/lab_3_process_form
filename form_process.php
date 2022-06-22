@@ -82,7 +82,7 @@
         echo "<p>You are studying 0 computer languages</p>";
     } else if(count($programming_lang_array) <= 1){
         $length = count($programming_lang_array);
-        echo "<p>You are studying $length computer languages";
+        echo "<p>You are studying $length computer language";
         iterateProgrammingArray($programming_lang_array);
     } else if(count($programming_lang_array) >= 2 && count($programming_lang_array) < 5){
         $length = count($programming_lang_array);
