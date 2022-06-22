@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">    
 </head>
 <body>
+    <h1>Comp Languages Survey</h1>
     <div id="wrapper">
         <form action="./form_process.php" method="post">
             <fieldset class="user-info">
