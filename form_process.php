@@ -1,5 +1,13 @@
 <?php
 
+    session_start();
+
+    function iterateProgrammingArray($arr) {
+        foreach ($arr as $item){
+            echo "<li>$item</li>";
+        };
+    };
+
     // create constants
     const MIN_USERNAME_LEN = 2;
     const PASSWORD = "bcit";
@@ -11,8 +19,9 @@
     $username = "";
     $password = "";
     $student_number = "";
-    $programming_lang_array = [];
+    $programming_lang_array = [''];
     $gender = false;
+    $prefix = "";
 
 
     // normalize data 
@@ -22,20 +31,61 @@
     $student_number = trim($_POST["student_number"]);
     $programming_lang_array = $_POST["programming_languages"];
     $gender = $_POST["gender"];
+    
 
+
+    // check data exists
 
     if (!isset($username) || !isset($password) || !isset($student_number)){
         die("The form field(s) username, password, or student number do not exist");
     };
 
+    // check conditions 
+
     if (strlen($username) < MIN_USERNAME_LEN) {
-        die("The username entered is too short. Must be 2 characters or longer");
+    
+        $_SESSION['error'] = "The username entered is too short. Must be 2 characters or longer";
+        die(header("location:index.php"));
     };
 
     if ($password != PASSWORD) {
-        die("The password entered is incorrect");
+        $_SESSION['error'] = "The password is incorrect";
+        die(header("location:index.php"));
     };
 
     if (preg_match(student_number_regex, $student_number) != 1){
-        die("The student number does not match the format: A0nnnnnnn");
+        $_SESSION['error'] = "The student number does not match the format: A0nnnnnnn";
+        die(header("location:index.php"));
+        
+    };
+
+    if ($gender == false){
+        $_SESSION['error'] = "A gender must be selected";
+        die(header("location:index.php"));
+        
+    };
+
+    if ($gender == "male"){
+        global $prefix;
+        $prefix = "Mr.";
+    } else {
+        
+        $prefix = "Ms.";
+    }
+
+    echo "<h1>Welcome, $prefix $username!</h1>";
+   
+
+    if(isset($programming_lang_array) == false){
+        echo "<p>You are studying 0 computer languages</p>";
+    };
+
+    if(count($programming_lang_array) < 1){
+        $length = count($programming_lang_array);
+        echo "<p>You are studying $length computer languages";
+    }
+
+    if(count($programming_lang_array) >= 2){
+        $length = count($programming_lang_array);
+        echo "<p>You are studying $length computer languages! You are multilingual";
     }

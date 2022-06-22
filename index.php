@@ -51,6 +51,17 @@
 
             <input type="submit" value="Submit">
         </form>
+        
     </div>
+    <?php 
+        session_start();
+        
+
+        if(isset($_SESSION['error'])) {
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
+        
+    ?>
 </body>
 </html>
