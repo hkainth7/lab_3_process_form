@@ -71,7 +71,7 @@
     } else {
         
         $prefix = "Ms.";
-    }
+    };
 
     echo "<h1>Welcome, $prefix $username!</h1>";
    
@@ -83,9 +83,12 @@
     if(count($programming_lang_array) < 1){
         $length = count($programming_lang_array);
         echo "<p>You are studying $length computer languages";
+        iterateProgrammingArray($programming_lang_array);
     }
 
     if(count($programming_lang_array) >= 2){
         $length = count($programming_lang_array);
         echo "<p>You are studying $length computer languages! You are multilingual";
+        iterateProgrammingArray($programming_lang_array);
+    
     }
